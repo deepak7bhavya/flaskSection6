@@ -70,7 +70,7 @@ class DataSet(Resource):
 
 
 api.add_resource(DataSet,'/DataSet')
-app.run(port=5000,debug=True)
+app.run(port=5000)
 
 
 
