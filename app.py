@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template,jsonify
+from flask import Flask, render_template
 from flask_restful import Resource, Api, reqparse
 from flask_cors import CORS
 from sendmail import sendMail
