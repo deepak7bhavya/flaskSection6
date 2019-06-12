@@ -1,1 +1,1 @@
-{'hostdata': 'AWS', 'bigdata': 'AWS EMR', 'etldata': 'AzureDF', 'mldata': 'AWSSage', 'visdata': 'Power', 'speechdata': 'AWSPolly'}
+{'bigdata': 'HDPAWS', 'etldata': 'AzureDF', 'hostdata': 'Azure', 'mldata': 'AWSSage', 'speechdata': 'AWSPolly', 'visdata': 'Power'}

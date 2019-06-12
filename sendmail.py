@@ -46,10 +46,17 @@ def sendMail(SENDER_ID,SENDER_PASS,RECEIVER_ID,subject,body):
     print("Files Attached")
 
 
-    with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
-        smtp.login(SENDER_ID,SENDER_PASS)
-        smtp.send_message(msg)
-        print("Success")
-
-    return True;
+    #with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
+    try:
+        with smtplib.SMTP('smtp.gmail.com',587) as smtp:
+            smtp.ehlo()
+            smtp.starttls()
+            smtp.ehlo()
+            smtp.login(SENDER_ID,SENDER_PASS)
+            smtp.send_message(msg)
+            print("Success")
+        return True;
+    except:
+        print("GarBad ho gya")
+        return True
 
