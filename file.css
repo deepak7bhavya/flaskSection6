@@ -1,0 +1,127 @@
+#first
+{
+	position: absolute;
+	width: 27%;
+	height:65%;
+	left : 5%;
+	border: 1px solid #9C9C9C;
+	top : 10%;
+}
+#second
+{
+	position: absolute;
+	width: 27%;
+	height:65%;
+	left : 35%;
+	top : 10%;
+	border: 1px solid #9C9C9C;
+	
+}
+#third
+{
+	position: absolute;
+	width: 27%;
+	height:65%;
+	left : 65%;
+	top : 10%;
+	border: 1px solid #9C9C9C;
+}
+#fourth
+{
+	position: absolute;
+	width: 27%;
+	height:65%;
+	left : 5%;
+	top : 80%;
+	border: 1px solid #9C9C9C;
+}
+#fifth
+{
+	position: absolute;
+	width: 27%;
+	height:65%;
+	left : 35%;
+	top : 80%;
+	border: 1px solid #9C9C9C;
+}
+#sixth
+{
+	position: absolute;
+	width: 27%;
+	height:65%;
+	left : 65%;
+	top : 80%;
+	border: 1px solid #9C9C9C;
+}
+#hosting ,#bigdata ,#etl,#mlengine,#visualization,#speechanalysis
+{
+	position:relative;
+	width: 75%;
+	height:73%;
+	left : 12%;
+	border: 1px solid #9C9C9C;
+	
+}
+h4 
+{
+	position : relative;
+	left: 12%;
+	
+}
+table
+{
+	position:relative;
+	border: none;
+	border-collapse:collapse;
+	height:92%;
+	width:100%;
+}
+#host tr
+{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-top: 1px solid #9C9C9C;
+	padding:20px 16px;
+	border-collapse: collapse;
+}
+#host td{
+	position:relative;
+	border:none;
+    padding:20px 16px;
+}
+#bigdata tr,#etl tr,#speech tr
+{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-top: 1px solid #9C9C9C;
+	border-bottom:none;
+	padding:8px 8px;
+	border-collapse: collapse;
+}
+#bigdata td,#etl td,#speech td{
+	position:relative;
+	border:none;
+    padding:15.7px 14px;
+}
+#ml tr,#vis tr
+{
+	position:relative;
+	width:100%;
+	height:100%;
+	border-top: 1px solid #9C9C9C;
+	border-bottom:none;
+	padding:6px 6px;
+	border-collapse: collapse;
+}
+#ml td{
+	position:relative;
+	border:none;
+    padding:12px 12px;
+}
+#vis td{
+	position:relative;
+	border:none;
+    padding:24px 18px;
+}
