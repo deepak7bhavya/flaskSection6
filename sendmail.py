@@ -46,21 +46,22 @@ def sendMail(SENDER_ID,SENDER_PASS,RECEIVER_ID,subject,body):
     print("Files Attached")
 
 
-    #with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
+    
     try:
-        with smtplib.SMTP('smtp.gmail.com',587) as smtp:
-            try:
-                smtp.ehlo()
-            except:
-                print("smtp.ehlo() me galata hai")
-            try:
-                smtp.starttls()
-            except:
-                print("smtp.starttls() me galat hai")
-            try:
-                smtp.ehlo()
-            except:
-                print("Second wala smtp.ehlo() me galata hai")
+        with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
+        #with smtplib.SMTP('smtp.gmail.com',587) as smtp:
+            # try:
+            #     smtp.ehlo()
+            # except:
+            #     print("smtp.ehlo() me galata hai")
+            # try:
+            #     smtp.starttls()
+            # except:
+            #     print("smtp.starttls() me galat hai")
+            # try:
+            #     smtp.ehlo()
+            # except:
+            #     print("Second wala smtp.ehlo() me galata hai")
             try:
                 smtp.login(SENDER_ID,SENDER_PASS)
             except Exception as e:
