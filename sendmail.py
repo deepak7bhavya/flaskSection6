@@ -1,0 +1,55 @@
+
+import smtplib
+from email.message import EmailMessage
+
+def sendMail(SENDER_ID,SENDER_PASS,RECEIVER_ID,subject,body):
+    # SENDER_ID  = 'd9572712747@gmail.com'
+    # SENDER_PASS = 
+    # RECEIVER_ID = 'deepak986698@gmail.com'
+    print("inside Send Mail")
+
+    # subject = 'Gaurav Bhaiya Mail Subject With an Image Attachment'
+    # body = 'Please Find the Image Attached'
+
+
+    #Setting Message Body
+    msg = EmailMessage()
+    msg['Subject'] = subject
+    msg['From']  = SENDER_ID
+    msg['To'] = RECEIVER_ID
+    msg.set_content(body)
+
+
+    #Creating A Text file and Sending It
+
+    file = open("responseData.txt","w+")
+    file.write(body);
+    file.close();
+    file = None
+
+    #Setting Attachment
+    files = ['responseData.txt']
+    for file in files:
+        with open(file,'rb') as f:
+            file_data = f.read();
+            file_name = f.name
+            #file_type = imghdr.what(file_name) # NOT NEEDED NOW
+
+        #msg.add_attachment(file_data,maintype='image',subtype=file_type,filename=file_name)
+        msg.add_attachment(file_data,maintype='application',subtype='octet-stream',filename=file_name)
+
+
+
+    #msg.add_attachment(file_data,maintype='image',subtype=file_type,filename=file_name)
+    #msg.add_attachment(file_data,maintype='text',subtype='octet-stream',filename=file_name)
+
+    print("Files Attached")
+
+
+    with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
+        smtp.login(SENDER_ID,SENDER_PASS)
+        smtp.send_message(msg)
+        print("Success")
+
+    return True;
+
