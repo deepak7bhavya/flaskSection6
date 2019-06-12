@@ -49,10 +49,23 @@ def sendMail(SENDER_ID,SENDER_PASS,RECEIVER_ID,subject,body):
     #with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp:
     try:
         with smtplib.SMTP('smtp.gmail.com',587) as smtp:
-            smtp.ehlo()
-            smtp.starttls()
-            smtp.ehlo()
-            smtp.login(SENDER_ID,SENDER_PASS)
+            try:
+                smtp.ehlo()
+            except:
+                print("smtp.ehlo() me galata hai")
+            try:
+                smtp.starttls()
+            except:
+                print("smtp.starttls() me galat hai")
+            try:
+                smtp.ehlo()
+            except:
+                print("Second wala smtp.ehlo() me galata hai")
+            try:
+                smtp.login(SENDER_ID,SENDER_PASS)
+            except:
+                print("login me galat hai")
+            
             smtp.send_message(msg)
             print("Success")
         return True;
