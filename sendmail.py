@@ -63,7 +63,9 @@ def sendMail(SENDER_ID,SENDER_PASS,RECEIVER_ID,subject,body):
                 print("Second wala smtp.ehlo() me galata hai")
             try:
                 smtp.login(SENDER_ID,SENDER_PASS)
-            except:
+            except Exception as e:
+                print("login me galat hai")
+                print(e)
                 print("login me galat hai")
             
             smtp.send_message(msg)
